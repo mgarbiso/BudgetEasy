@@ -25,9 +25,11 @@ using Dates
 # Over a period of time!
 
 
-
 include("Entries.jl")
 include("Money.jl")
 include("Expenses.jl")
+
+
+export Money
 
 end # module

@@ -21,4 +21,4 @@ end
 
 #You can divide money my numbers.
 /(money1::Money,number::Real) = Money(money1.value/number, money1.units)
-\(number::Real,money1::Money) = Money(number\money1.value, money1.units)
+# \(number::Real,money1::Money) = Money(number\money1.value, money1.units)
