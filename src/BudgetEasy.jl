@@ -1,8 +1,10 @@
-module BudgetSimple
+module BudgetEasy
 
-const name = "BudgetSimple"
+const name = "BudgetEasy"
 
-using JSON3, Currencies
+using Dates
+
+# using JSON3, Currencies, Dates
 
 # File Modification Section
 
@@ -19,10 +21,13 @@ using JSON3, Currencies
 
 # Use Currences.jl for expressing amounts of money.
 
-
 # Create Pretty various plots, maybe Gadfly or plots.
 # Over a period of time!
-#
 
+
+
+include("Entries.jl")
+include("Money.jl")
+include("Expenses.jl")
 
 end # module
