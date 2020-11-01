@@ -21,7 +21,10 @@ include("Incomes.jl")
 
 include("BudgetOperations.jl")
 
-
+#Objects of use.
 export Money, Expense, Income
+
+#Budget functions
+export get_net_income
 
 end # module
