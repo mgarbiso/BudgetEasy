@@ -1,4 +1,4 @@
-"""Incomes are objects to record income,
+"""Incomes are entries that record income,
    `amount` is a `Money` object,
    `category` is a `String`,
    `source` is a String,
@@ -9,7 +9,7 @@
    Income(amount, category, merchant; date = today())
 
 """
-struct Income
+struct Income <: Entry
     amount::Money
     category::String
     source::String

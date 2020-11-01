@@ -9,7 +9,7 @@
    Expense(amount, category, merchant; date = today())
 
 """
-struct Expense
+struct Expense <: Entry
     amount::Money
     category::String
     merchant::String
