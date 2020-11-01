@@ -25,7 +25,6 @@ using Dates
 # Over a period of time!
 
 include("Money.jl")
-include("Entries.jl")
 include("Expenses.jl")
 include("Incomes.jl")
 
