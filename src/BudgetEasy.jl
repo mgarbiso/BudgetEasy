@@ -17,6 +17,6 @@ include("Expenses.jl")
 include("Incomes.jl")
 
 
-export Money, Expense
+export Money, Expense, Income
 
 end # module
