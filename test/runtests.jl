@@ -17,3 +17,9 @@ num2 = 8
 
 @test_throws ErrorException m3 + m1
 @test_throws ErrorException m3 - m1
+
+@test m1 - 0 == BudgetEasy.Money(4, "monies")
+@test 0 - m2 == BudgetEasy.Money(-10, "monies")
+
+@test m1 + 0 == BudgetEasy.Money(4, "monies")
+@test 0 + m2 == BudgetEasy.Money(10, "monies")
