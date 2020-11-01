@@ -24,10 +24,10 @@ using Dates
 # Create Pretty various plots, maybe Gadfly or plots.
 # Over a period of time!
 
-
-include("Entries.jl")
 include("Money.jl")
+include("Entries.jl")
 include("Expenses.jl")
+include("Incomes.jl")
 
 
 export Money

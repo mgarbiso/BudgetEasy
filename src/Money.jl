@@ -28,9 +28,8 @@ end
 
 
 #You can multiply money by numbers.
-*(money1::Money,number::Real) = Money(money1.value*number, money1.units)
-*(number::Real,money1::Money) = Money(money1.value*number, money1.units)
+*(money1::Money,number::Real) = Money(money1.value*number, money1.units)::Money
+*(number::Real,money1::Money) = Money(money1.value*number, money1.units)::Money
 
 #You can divide money my numbers.
-/(money1::Money,number::Real) = Money(money1.value/number, money1.units)
-# \(number::Real,money1::Money) = Money(number\money1.value, money1.units)
+/(money1::Money,number::Real) = Money(money1.value/number, money1.units)::Money
