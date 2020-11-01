@@ -19,6 +19,8 @@ include("Entries.jl")
 include("Expenses.jl")
 include("Incomes.jl")
 
+include("BudgetOperations.jl")
+
 
 export Money, Expense, Income
 
