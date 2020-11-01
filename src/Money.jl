@@ -26,6 +26,13 @@ function -(money1::Money,money2::Money)::Money
     Money(money1.value - money2.value, money1.units)
 end
 
+#You can add 0 to anything.
++(0,money::Money) = money
++(money::Money,0) = money
+
+#You can subtract 0 from anything.
+-(0,money::Money) = money
+-(money::Money,0) = money
 
 #You can multiply money by numbers.
 *(money1::Money,number::Real) = Money(money1.value*number, money1.units)::Money
