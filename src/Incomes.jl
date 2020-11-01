@@ -1,4 +1,4 @@
-"""Incomes are entries that record the `amount`, `date`, and `category` of income earned,
+"""Incomes are objects to record income,
    `amount` is a `Money` object,
    `category` is a `String`,
    `source` is a String,
