@@ -3,10 +3,20 @@
    `category` is a `String`,
    `merchant` is a String,
    `date` is a Date object,
+
+   Expense(amount, category, merchant, date)
+
+   Expense(amount, category, merchant; date = today())
+
 """
 struct Expense
     amount::Money
     category::String
     merchant::String
     date::Date
+end
+
+#Outer Constructor - Expense. today() is  from Dates.jl.
+function Expense(amount, category, merchant; date = today())
+    Expense(amount, category, merchant, date)
 end
