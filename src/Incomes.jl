@@ -21,3 +21,7 @@ end
 function Income(amount, category, source; date = today())
     Income(amount, category, source, date)
 end
+
+
+"""get_value(Income) returns the `amount` property, `Money` object."""
+get_value(income::Income) = income.amount

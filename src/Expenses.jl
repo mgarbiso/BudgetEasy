@@ -20,3 +20,6 @@ end
 function Expense(amount, category, merchant; date = today())
     Expense(amount, category, merchant, date)
 end
+
+"""get_value(Expense) returns the `amount` property, `Money` object."""
+get_value(expense::Expense) = expense.amount
