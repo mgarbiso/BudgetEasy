@@ -26,11 +26,11 @@ function -(money1::Money,money2::Money)::Money
     Money(money1.value - money2.value, money1.units)
 end
 
-#You can add 0 to anything.
+#You can add 0 to Money.
 +(zero,money::Money) = money
 +(money::Money,zero) = money
 
-#You can subtract 0 from anything.
+#You can subtract 0 from Money.
 -(zero,money::Money) = Money(-money.value, money.units)
 -(money::Money,zero) = money
 
@@ -45,3 +45,12 @@ end
 show(io::IO, money::Money) = print(io,"$(round(money.value; digits = 2)) $(money.units)")
 
 #
+function parse(::Type{Money}, str::String)
+    value_str = match(r"\d\.*\d*", str).match
+
+    units_str = replace(str, value_str => "")
+
+    units_str = lstrip(rstrip(units_str))
+
+    return Money(parse(Float64, value_str), units_str)
+end
