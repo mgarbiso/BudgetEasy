@@ -44,7 +44,7 @@ end
 #IO of Money
 show(io::IO, money::Money) = print(io,"$(round(money.value; digits = 2)) $(money.units)")
 
-#
+#ToDo: Make hardier regex.
 function parse(::Type{Money}, str::String)
     value_str = match(r"\d\.*\d*", str).match
 
