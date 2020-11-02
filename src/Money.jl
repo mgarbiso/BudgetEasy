@@ -1,5 +1,5 @@
 #Import this functions for Money functionality.
-import Base:+, -, *, /
+import Base:+, -, *, /, show
 
 """This is a simple money object is has a value `Real` and a units `String`"""
 struct Money
