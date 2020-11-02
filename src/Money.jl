@@ -42,4 +42,6 @@ end
 /(money1::Money,number::Real) = Money(money1.value/number, money1.units)::Money
 
 #IO of Money
-Base.show(io::IO, money::Money) = print(io,"$(round(money.value; digits = 2)) $(money.units)")
+show(io::IO, money::Money) = print(io,"$(round(money.value; digits = 2)) $(money.units)")
+
+#
