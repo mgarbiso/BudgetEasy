@@ -4,21 +4,15 @@ const name = "BudgetEasy"
 
 using Dates
 
-# using JSON3, Currencies, Dates
-
-#Import Raw data!
-
-# Create Pretty various plots, maybe Gadfly or plots.
-
-# Over a period of time!
-
+#Money Object and Money Related Operations
 include("Money.jl")
 
-
+#Entries of the budget and their logics.
 include("Entries.jl")
 include("Expenses.jl")
 include("Incomes.jl")
 
+#The interactions of different types of entries.
 include("BudgetOperations.jl")
 
 #Objects of use.
