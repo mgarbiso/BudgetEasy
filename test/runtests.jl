@@ -30,10 +30,10 @@ num2 = 8
 @test parse(Money, "0.05 monies") == BudgetEasy.Money(0.05, "monies")
 
 @test parse(Money, "mon 5") == BudgetEasy.Money(5.0, "mon")
-@test parse(Money, "mon 5.0") == BudgetEasy.Money(5.0, "monies")
-@test parse(Money, "mon .500") == BudgetEasy.Money(0.5, "monies")
-@test parse(Money, "mon .5") == BudgetEasy.Money(0.5, "monies")
-@test parse(Money, "mon 0.05") == BudgetEasy.Money(0.05, "monies")
+@test parse(Money, "mon 5.0") == BudgetEasy.Money(5.0, "mon")
+@test parse(Money, "mon .500") == BudgetEasy.Money(0.5, "mon")
+@test parse(Money, "mon .5") == BudgetEasy.Money(0.5, "mon")
+@test parse(Money, "mon 0.05") == BudgetEasy.Money(0.05, "mon")
 
 @test_throws parse(Money, "mon 0.05 monies")
 
