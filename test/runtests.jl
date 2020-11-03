@@ -35,7 +35,7 @@ num2 = 8
 @test parse(Money, "mon .5") == BudgetEasy.Money(0.5, "mon")
 @test parse(Money, "mon 0.05") == BudgetEasy.Money(0.05, "mon")
 
-@test_throws parse(Money, "mon 0.05 monies")
+@test_throws ErrorException parse(Money, "mon 0.05 monies")
 
 #Testing Entry Properties
 
