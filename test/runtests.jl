@@ -23,6 +23,20 @@ num2 = 8
 @test m1 + 0 == BudgetEasy.Money(4, "monies")
 @test 0 + m2 == BudgetEasy.Money(10, "monies")
 
+@test parse(Money, "5 monies") == BudgetEasy.Money(5.0, "monies")
+@test parse(Money, "5.0 monies") == BudgetEasy.Money(5.0, "monies")
+@test parse(Money, ".500 monies") == BudgetEasy.Money(0.5, "monies")
+@test parse(Money, ".5 monies") == BudgetEasy.Money(0.5, "monies")
+@test parse(Money, "0.05 monies") == BudgetEasy.Money(0.05, "monies")
+
+@test parse(Money, "mon 5") == BudgetEasy.Money(5.0, "mon")
+@test parse(Money, "mon 5.0") == BudgetEasy.Money(5.0, "monies")
+@test parse(Money, "mon .500") == BudgetEasy.Money(0.5, "monies")
+@test parse(Money, "mon .5") == BudgetEasy.Money(0.5, "monies")
+@test parse(Money, "mon 0.05") == BudgetEasy.Money(0.05, "monies")
+
+@test_throws parse(Money, "mon 0.05 monies")
+
 #Testing Entry Properties
 
 e1 = BudgetEasy.Expense(BudgetEasy.Money(3, "monies"), "Test Category 1", "Test Merchant 1", today())
