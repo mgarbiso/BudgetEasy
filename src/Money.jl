@@ -1,5 +1,5 @@
 #Import this functions for Money functionality.
-import Base:+, -, *, /, show
+import Base:+, -, *, /, show, parse
 
 """This is a simple money object is has a value `Real` and a units `String`"""
 struct Money
@@ -44,13 +44,35 @@ end
 #IO of Money
 show(io::IO, money::Money) = print(io,"$(round(money.value; digits = 2)) $(money.units)")
 
-#ToDo: Make hardier regex.
+#Money Parser
 function parse(::Type{Money}, str::String)
-    value_str = match(r"\d\.*\d*", str).match
 
-    units_str = replace(str, value_str => "")
+    prefix = ""
+    value_str = ""
+    postfix = ""
 
-    units_str = lstrip(rstrip(units_str))
+    finished_prefix = false
+    finished_value_str = false
 
-    return Money(parse(Float64, value_str), units_str)
+    for character in str
+        if (isdigit(character) || character == '.') && !finished_value_str
+            value_str *= character
+            finished_prefix = true
+        elseif !finished_prefix
+            prefix *= character
+        else
+            postfix *= character
+            finished_value_str = true
+        end
+    end
+
+    prefix = prefix |> lstrip |> rstrip
+    postfix = postfix |> lstrip |> rstrip
+
+    if prefix != "" && postfix != ""
+        error("You can only have a prefix or postfix for your money unit.")
+    end
+
+    return Money(parse(Float64, value_str), prefix*postfix)
+
 end
