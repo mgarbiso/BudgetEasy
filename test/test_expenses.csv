@@ -1,8 +1,8 @@
-amount, category, merchant, date
-$50, food, grocery store, 11/7/20
-$15, food, restaurant, 10/6/20
-$10, food, grocery store, 10/8/20
-$60, food, school, 8/8/19
-$5, food, grocery store, 3/07/20
-$50, food, mechanic, 11/7/2020
-$20, food, school, 3/6/20
+amount,category,merchant,date
+$50,food,grocery store,2020-10-7
+$15,food,restaurant,2020-11-20
+$10,food,grocery store,2020-11-7
+$60,education,school,2019-8-8
+$5,food,grocery store,2020-3-07
+$50,health,mechanic,2020-11-7
+$20,education,school,2020-3-6
