@@ -4,9 +4,9 @@
    `source` is a String,
    `date` is a Date object,
 
-   Income(amount, category, merchant, date)
+   Income(amount::Money, category::String, merchant::String, date::Date)
 
-   Income(amount, category, merchant; date = today())
+   Income(amount::Money, category::String, merchant::String; date = today()::Date)
 
 """
 struct Income <: Entry

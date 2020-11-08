@@ -4,9 +4,9 @@
    `merchant` is a String,
    `date` is a Date object,
 
-   Expense(amount, category, merchant, date)
+   Expense(amount::Money, category::String, merchant::String, date::Date)
 
-   Expense(amount, category, merchant; date = today())
+   Expense(amount::String, category::String, merchant::String; date::Date = today())
 
 """
 struct Expense <: Entry
