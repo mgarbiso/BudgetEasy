@@ -76,3 +76,6 @@ function parse(::Type{Money}, str::String)
     return Money(parse(Float64, value_str), prefix*postfix)
 
 end
+
+#Constructor for Money with a string.
+Money(str::String) = parse(Money, str)
