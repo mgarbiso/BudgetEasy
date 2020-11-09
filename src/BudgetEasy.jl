@@ -2,7 +2,7 @@ module BudgetEasy
 
 const name = "BudgetEasy"
 
-using Dates
+using Dates, CSV
 
 #Money Object and Money Related Operations
 include("Money.jl")
@@ -19,6 +19,6 @@ include("BudgetOperations.jl")
 export Money, Expense, Income
 
 #Budget functions
-export get_net_income
+export get_net_income, import_from_file!
 
 end # module

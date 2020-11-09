@@ -23,3 +23,11 @@ end
 
 """get_value(Expense) returns the `amount` property, `Money` object."""
 get_value(expense::Expense) = expense.amount
+
+"""import_from_file! imports from `source` into the `Expense` object."""
+function import_entry_from_file(::Type{Expense}, source)
+
+    expense_csv = CSV.File(source; types=Dict(:amount => Money, :date => Date))
+
+    [Expense(row.amount, row.category, row.merchant, row.date) for row in expense_csv]
+end
